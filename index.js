@@ -27,26 +27,26 @@ async function run() {
             const foods = await cursor.toArray();
             res.send(foods);
         })
-        app.post('/food', async (req, res) => {
-            const newFood = req.body;
-            console.log('adding new food')
-            const result = await foodCollection.insertOne(newFood);
-            res.send(result)
-        })
-        // single id 
-        app.get('/food/:id', async (req, res) => {
-            const id = req.params.id;
-            const query = { _id: ObjectId(id) };
-            const result = await foodCollection.findOne(query);
-            res.send(result);
-        });
+        // app.post('/food', async (req, res) => {
+        //     const newFood = req.body;
+        //     console.log('adding new food')
+        //     const result = await foodCollection.insertOne(newFood);
+        //     res.send(result)
+        // })
+        // // single id 
+        // app.get('/food/:id', async (req, res) => {
+        //     const id = req.params.id;
+        //     const query = { _id: ObjectId(id) };
+        //     const result = await foodCollection.findOne(query);
+        //     res.send(result);
+        // });
 
-        app.delete('/food/:id', async (req, res) => {
-            const id = req.params.id;
-            const query = { _id: ObjectId(id) };
-            const result = await foodCollection.deleteOne(query);
-            res.send(result);
-        })
+        // app.delete('/food/:id', async (req, res) => {
+        //     const id = req.params.id;
+        //     const query = { _id: ObjectId(id) };
+        //     const result = await foodCollection.deleteOne(query);
+        //     res.send(result);
+        // })
 
 
 
