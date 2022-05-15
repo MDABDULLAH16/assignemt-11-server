@@ -62,6 +62,10 @@ app.get('/', (req, res) => {
     res.send('Running server-side')
 })
 
+//test server site
+app.get('/hero', (req, res) => {
+    res.send('heroku upto data')
+})
 app.listen(port, () => {
     console.log('Listening to port', port);
 })
